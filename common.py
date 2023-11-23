@@ -27,11 +27,29 @@ COL_WEATHER_CONDITION = "weather_condition"
 
 # Preprocessing
 PREPROCESS_PATH = "prep"
-PRE_PIPELINE_OUTPUT = os.path.join(PREPROCESS_PATH, "outputs")
-PRE_FINAL_CSV = os.path.join(PREPROCESS_PATH, "dataset.csv")
-PRE_SAMPLED_CSV = os.path.join(PREPROCESS_PATH, "sampled.csv")
-PRE_TRAINING_CSV = os.path.join(PREPROCESS_PATH, "training.csv")
-PRE_TESTING_CSV = os.path.join(PREPROCESS_PATH, "testing.csv")
+
+
+def PRE_PIPELINE_OUTPUT(city: str):
+    return os.path.join(PREPROCESS_PATH, city, "outputs")
+
+
+def PRE_FINAL_CSV(city: str):
+    return os.path.join(PREPROCESS_PATH, city, "dataset.csv")
+
+
+def PRE_SAMPLED_CSV(city: str):
+    return os.path.join(PREPROCESS_PATH, city, "sampled.csv")
+
+
+def PRE_TRAINING_CSV(city: str):
+    return os.path.join(PREPROCESS_PATH, city, "training.csv")
+
+
+def PRE_TESTING_CSV(city: str):
+    return os.path.join(PREPROCESS_PATH, city, "testing.csv")
+
+def PRE_STATISTICS_PATH(city: str):
+    return os.path.join(PREPROCESS_PATH, city)
 
 SPLIT_RATIO = [0.8, 0.2]
 
